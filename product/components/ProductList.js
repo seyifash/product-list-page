@@ -8,7 +8,7 @@ const ProductList = ({products, searchInput}) => {
   const [canNextPage, setNextPage] = useState(true);
   const [canPrevPage, setPrevPage] = useState(false);
 
-  const filteredProducts = searchInput ? products.filter(product => product.title.toLowerCase().includes(searchInput.toLowerCase()) || product.category.toLowerCase().includes(searchInput.toLowerCase())) :
+  const filteredProducts = searchInput ? products.filter(product => product.title.toLowerCase().includes(searchInput.toLowerCase())) :
   products;
   const productLen = filteredProducts.length;
 

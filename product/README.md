@@ -1,40 +1,138 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Product Listing App
 
-## Getting Started
+This is a Product Listing App built with Next.js. The app fetches product data from the Fake Store API and displays it in a paginated list. Users can search for products and view detailed information about each product.
 
-First, run the development server:
+## Table of Contents
+
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Clone the Repository](#clone-the-repository)
+  - [Install Dependencies](#install-dependencies)
+- [Usage](#usage)
+  - [Running the Development Server](#running-the-development-server)
+  - [Building for Production](#building-for-production)
+  - [Running the Production Server](#running-the-production-server)
+- [Project Structure](#project-structure)
+- [Components](#components)
+- [Pages](#pages)
+
+## Installation
+
+To set up and run this project locally, follow these steps:
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (version 12.x or later)
+- [npm](https://www.npmjs.com/) (version 6.x or later) or [Yarn](https://yarnpkg.com/)
+
+#### Installing Node.js and npm
+
+1. **Node.js and npm**: Node.js comes with npm, so installing Node.js will also install npm.
+   - Download the Node.js installer from the [official website](https://nodejs.org/).
+   - Run the installer and follow the setup steps.
+   - Verify the installation by running the following commands in your terminal:
+     ```bash
+     node -v
+     npm -v
+     ```
+   You should see the version numbers of Node.js and npm.
+
+### Clone the Repository
+
+Clone the repository to your local machine using the following command:
 
 ```bash
+git clone https://github.com/your-username/product-listing-app.git
+cd product-listing-app/product
+
+Install Dependencies
+Install the required dependencies using npm or Yarn.
+
+Using npm:
+
+npm install
+
+Or using Yarn:
+
+yarn install
+
+#Usage
+
+Running the Development Server
+To start the development server, run:
+
+Using npm:
 npm run dev
-# or
+
+Or using Yarn:
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Open your browser and navigate to http://localhost:3000 to see the app in action.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+#Building for Production
+To create an optimized production build, run:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Using npm:
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Or using Yarn:
+yarn build
 
-## Learn More
+#Running the Production Server
+After building the project, you can start the production server with:
 
-To learn more about Next.js, take a look at the following resources:
+Using npm:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm start
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Or using Yarn:
 
-## Deploy on Vercel
+yarn start
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#Project Structure
+The project structure is as follows:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+.
+├── components
+│   ├── ProductList.js
+│   └── SearchInput.js
+├── pages
+│   ├── index.js
+│   └── products
+│       └── [productId].js
+├── public
+│   └── ...
+├── styles
+│   └── ...
+├── README.md
+├── package.json
+└── ...
+#Components
+ProductList.js: Displays the list of products with pagination and handles the pagination logic.
+SearchInput.js: Provides a search input for filtering products based on their title or category.
+Pages
+
+#index.js
+index.js: The home page that lists all products and includes the search functionality.
+getStaticProps fetches the products from the Fake Store API using getStaticProps.
+Renders the SearchInput and ProductList components.
+
+#products.[productId].js
+products/[productId].js: The product details page that displays detailed information about a selected product.
+Fetches the product details using getStaticProps and getStaticPaths.
+Displays the product's title, price, description, category, image, and rating.
+
+# Fake Api
+API
+This project uses the Fake Store API to fetch product data.
+
+API Endpoints
+GET /products: Fetches all products.
+GET /products/:productId: Fetches details for a specific product by its ID.
+
+
+
+
